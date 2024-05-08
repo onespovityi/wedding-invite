@@ -1,0 +1,19 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 97px;
+  font-family: 'Autography', sans-serif;
+}
+
+@media screen and (max-width: 555px) {
+  .title {
+    font-size: 56px;
+  }
+}

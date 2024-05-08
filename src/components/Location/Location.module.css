@@ -1,0 +1,33 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  gap: 20px;
+  text-align: center;
+}
+
+img {
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.link {
+  color: black;
+  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 520px) {
+  .location {
+    font-size: 16px;
+  }
+
+  .link {
+    font-size: 16px;
+  }
+}

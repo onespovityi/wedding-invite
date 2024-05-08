@@ -1,0 +1,114 @@
+:root {
+  --text-color: #000000;
+  --font-size: 52px;
+  --font-family: 'Autography', sans-serif;
+  --line-height: 1.55;
+}
+
+.title {
+  font-size: 16px;
+  text-transform: uppercase;
+  animation: fadeInTop 1.5s ease;
+}
+
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.namesContainer {
+  display: flex;
+  gap: 25px;
+}
+
+.namesLeft,
+.names,
+.namesRight {
+  color: var(--text-color);
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: var(--line-height);
+}
+
+.namesLeft {
+  animation: fadeInLeft 2s ease;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.names {
+  animation: fadeInCenter 2s ease;
+}
+
+@keyframes fadeInCenter {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.namesRight {
+  animation: fadeInRight 2s ease;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.inviteText {
+  margin-bottom: 40px;
+  animation: fadeInRight 2s ease;
+}
+
+.img {
+  margin: 15px 0px 20px;
+  animation: fadeInCenterImg 2s ease;
+}
+
+@keyframes fadeInCenterImg {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .names {
+    font-size: 42px;
+  }
+
+  .inviteText {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,52 @@
+.weddingDate {
+  color: #000000;
+  font-size: 52px;
+  font-family: 'Autography', sans-serif;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.weddingDayData {
+  color: #000000;
+  font-size: 80px;
+  font-family: 'Autography', sans-serif;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.daysCount {
+  font-size: 20px;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  gap: 70px;
+  margin-bottom: 60px;
+}
+
+.weddingDayContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media screen and (max-width: 520px) {
+  .weddingDate {
+    font-size: 42px;
+  }
+
+  .daysCount {
+    font-size: 14px;
+  }
+
+  .weddingDayData {
+    font-size: 50px;
+  }
+
+  .wrap {
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+}

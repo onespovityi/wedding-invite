@@ -1,0 +1,38 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.img {
+  padding: 15px 7px;
+}
+
+.groupImg {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 520px) {
+  .subTitle {
+    font-size: 16px;
+  }
+
+  .img {
+    width: 80px;
+    height: 44px;
+  }
+
+  .wrap {
+    gap: 10px;
+  }
+}
