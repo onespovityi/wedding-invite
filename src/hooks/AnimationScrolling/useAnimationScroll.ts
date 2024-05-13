@@ -9,7 +9,6 @@ export const useAnimations = () => {
       observer.current = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
         const { isIntersecting } = entries[0];
         setIsShow(isIntersecting);
-        console.log('isShow:', isIntersecting);
       });
       if (node) observer.current?.observe(node);
     }
