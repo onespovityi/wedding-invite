@@ -4,8 +4,9 @@ import { WeddingDetails } from './components/WeddingDetails/WeddingDetails'
 import { TimingDetails } from './components/TimingDetails/TimingDetails'
 import { Location } from './components/Location/Location'
 import { DressCode } from './components/DressCode/DressCode'
-// import { Contacts } from './components/Contacts/Contacts'
+import { Contacts } from './components/Contacts/Contacts'
 import { SeeYou } from './components/SeeYou/SeeYou'
+import { Questions } from './components/Questions/Questions'
 
 function App() {
 
@@ -16,7 +17,8 @@ function App() {
       <TimingDetails />
       <Location />
       <DressCode />
-      {/* <Contacts /> */}
+      <Questions />
+      <Contacts />
       <SeeYou />
     </div>
 
