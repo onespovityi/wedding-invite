@@ -1,9 +1,12 @@
 import cls from './Location.module.css'
 import location from '../../assets/img/GoldenHorse.jpg';
+import { useAnimations } from '../../hooks/AnimationScrolling/useAnimationScroll';
 
 export const Location = () => {
+  const { isShow, blockRef } = useAnimations();
+
   return (
-    <div className={cls.wrap}>
+    <div ref={blockRef} className={`${cls.wrap} ${isShow ? cls.elementShow : cls.elementAnimation}`}>
       <p className={cls.title}>LOCATION</p>
       <img width={255} height={305} src={location} alt='GoldenHorse' />
       <p className={cls.location}>Ресторан Golden Horse <br />с. Новобессергеневка, Конюшенный проезд, 102</p>

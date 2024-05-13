@@ -1,3 +1,7 @@
+.wrapper {
+  text-align: center;
+}
+
 .timingWrap {
   display: flex;
   align-items: flex-start;
@@ -49,6 +53,28 @@
 .time {
   font-size: 34px;
   font-family: 'Autography', sans-serif;
+}
+
+.elementAnimation {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.elementShow {
+  opacity: 1;
+  transition: all 0.7s;
+  transform: translateY(0%);
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media screen and (max-width: 520px) {

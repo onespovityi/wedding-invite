@@ -5,6 +5,7 @@ import DrCode3 from '../../assets/img/DrCode-3.svg';
 import DrCode4 from '../../assets/img/DrCode-4.svg';
 import DrCode5 from '../../assets/img/DrCode-5.svg';
 import DrCode6 from '../../assets/img/DrCode-6.svg';
+import { useAnimations } from '../../hooks/AnimationScrolling/useAnimationScroll';
 
 const dressCodeImg = [
   { img: DrCode1 },
@@ -16,13 +17,15 @@ const dressCodeImg = [
 ]
 
 export const DressCode = () => {
+  const { isShow, blockRef } = useAnimations();
+
   return (
-    <div className={cls.wrap}>
+    <div ref={blockRef} className={`${cls.wrap} ${isShow ? cls.elementShow : cls.elementAnimation}`}>
       <p className={cls.title}>DRESS-CODE</p>
       <p className={cls.subTitle}>Нам будет особенно приятно видеть <br /> вас в цветовой гамме нашей свадьбы</p>
       <div className={cls.groupImg}>
         {dressCodeImg.map(el => (
-          <img className={cls.img} width={124} height={69} src={el.img} alt='dressCode' />
+          <img key={el.img} className={cls.img} width={124} height={69} src={el.img} alt='dressCode' />
         ))}
       </div>
     </div>

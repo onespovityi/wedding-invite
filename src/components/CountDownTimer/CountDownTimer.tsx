@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import cls from './CountDownTimer.module.css';
 import { getEnding } from '../../utils/getEnding';
+import { useAnimations } from '../../hooks/AnimationScrolling/useAnimationScroll';
 
 const endingsMap = {
   days: ['день', 'дня', 'дней'],
@@ -9,8 +10,10 @@ const endingsMap = {
   seconds: ['секунда', 'секунды', 'секунд'],
 };
 
+
 export const CountdownTimer = () => {
   const [countdown, setCountdown] = useState(0);
+  const { isShow, blockRef } = useAnimations();
   const weddingDate = '24 august 2024';
 
   useEffect(() => {
@@ -30,7 +33,9 @@ export const CountdownTimer = () => {
   const seconds = Math.floor((countdown % (1000 * 60)) / 1000);
 
   return (
-    <>
+    <div ref={blockRef}
+      className={`${cls.wrapper} ${isShow ? cls.elementShow : cls.elementAnimation}`}
+    >
       <p>DATE</p>
       <p className={cls.weddingDate}>{weddingDate}</p>
       <p>ДО СВАДЬБЫ ОСТАЛОСЬ</p>
@@ -60,6 +65,6 @@ export const CountdownTimer = () => {
           <p className={cls.daysCount}>{getEnding(seconds, endingsMap.seconds)}</p>
         </div>
       </div>
-    </>
+    </div>
   );
 };

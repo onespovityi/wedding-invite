@@ -1,5 +1,6 @@
 import cls from './TimingDetails.module.css'
 import rings from '../../assets/img/rings.svg';
+import { useAnimations } from '../../hooks/AnimationScrolling/useAnimationScroll';
 
 const timeDetails = [
   { time: "16:00", event: "Сбор" },
@@ -9,8 +10,10 @@ const timeDetails = [
 ]
 
 export const TimingDetails = () => {
+  const { isShow, blockRef } = useAnimations();
+
   return (
-    <>
+    <div ref={blockRef} className={`${cls.wrapper} ${isShow ? cls.elementShow : cls.elementAnimation}`}>
       <p className={cls.title}>TIMING</p>
       <div className={cls.timingWrap}>
         {timeDetails.map(el => (
@@ -29,6 +32,6 @@ export const TimingDetails = () => {
         ))}
 
       </div>
-    </>
+    </div>
   )
 }
