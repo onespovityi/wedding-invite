@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useRef, useState } from 'react';
+import { FormEvent, useRef, useState } from 'react';
 import cls from './Questions.module.css';
 import emailjs from '@emailjs/browser';
 import { useAnimations } from '../../hooks/AnimationScrolling/useAnimationScroll';
