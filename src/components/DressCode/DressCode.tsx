@@ -22,7 +22,7 @@ export const DressCode = () => {
   return (
     <div ref={blockRef} className={`${cls.wrap} ${isShow ? cls.elementShow : cls.elementAnimation}`}>
       <p className={cls.title}>DRESS-CODE</p>
-      <p className={cls.subTitle}>Нам будет особенно приятно видеть <br /> вас в цветовой гамме нашей свадьбы</p>
+      <p className={cls.subTitle}>Будем очень благодарны, если <br /> Вы поддержите стиль и цвет <br /> нашей свадьбы в своих нарядах</p>
       <div className={cls.groupImg}>
         {dressCodeImg.map(el => (
           <img key={el.img} className={cls.img} width={124} height={69} src={el.img} alt='dressCode' />
