@@ -10,6 +10,6 @@ export const WeddingDetails = () => {
       <p className={cls.namesRight}>{"Maria"}</p>
     </div>
     <img className={cls.img} width={309} src={weddingCouple} alt='weddingCouple' />
-    <p className={cls.inviteText}>Приглашаем отпраздновать Вас <br /> самое важное событие в нашей <br /> жизни - день нашей свадьбы!</p>
+    <p className={cls.inviteText}>Приглашаем Вас отпраздновать <br /> самое важное событие в нашей <br /> жизни - день нашей свадьбы!</p>
   </>
 }
