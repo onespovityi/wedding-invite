@@ -29,7 +29,7 @@ export const Questions = () => {
   return (
     <div ref={blockRef} className={`${cls.wrap} ${isShow ? cls.elementShow : cls.elementAnimation}`}>
       <p className={cls.title}>QUESTIONS</p>
-      <p className={cls.subTitle}>Просим вас ответить на <br /> несколько вопросов, это поможет <br /> нам в организации торжества</p>
+      <p className={cls.subTitle}>Просим вас ответить на <br /> несколько вопросов <span className={cls.red}>до 1 августа</span>, <br /> это поможет нам в организации торжества</p>
       {!isClosedQuestions ? (
         <form ref={form} onSubmit={sendEmail}>
           <div className={cls.questionsContainer}>
