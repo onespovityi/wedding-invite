@@ -1,1 +1,16 @@
-
+{
+  "name": "Свадебное приглашение",
+  "short_name": "Приглашение",
+  "icons": [
+    {
+      "src": "./src/assets/img/rings.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000"
+}
