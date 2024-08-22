@@ -3,6 +3,11 @@ import cls from './CountDownTimer.module.css';
 import { getEnding } from '../../utils/getEnding';
 import { useAnimations } from '../../hooks/AnimationScrolling/useAnimationScroll';
 
+interface CountdownTimerProps {
+  isWeddingDay: boolean;
+  setIsWeddingDay: (value: boolean) => void;
+}
+
 const endingsMap = {
   days: ['день', 'дня', 'дней'],
   hours: ['час', 'часа', 'часов'],
@@ -11,7 +16,7 @@ const endingsMap = {
 };
 
 
-export const CountdownTimer = () => {
+export const CountdownTimer: React.FC<CountdownTimerProps> = ({ isWeddingDay, setIsWeddingDay }) => {
   const [countdown, setCountdown] = useState(0);
   const { isShow, blockRef } = useAnimations();
   const weddingDate = '24 august 2024';
@@ -21,7 +26,14 @@ export const CountdownTimer = () => {
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = targetDate.getTime() - now;
-      setCountdown(distance);
+
+      if (distance <= 0) {
+        setCountdown(0);
+        setIsWeddingDay(true);
+        clearInterval(interval);
+      } else {
+        setCountdown(distance);
+      }
     }, 1000);
 
     return () => clearInterval(interval);
@@ -36,35 +48,40 @@ export const CountdownTimer = () => {
     <div ref={blockRef}
       className={`${cls.wrapper} ${isShow ? cls.elementShow : cls.elementAnimation}`}
     >
-      <p>DATE</p>
-      <p className={cls.weddingDate}>{weddingDate}</p>
-      <p>ДО СВАДЬБЫ ОСТАЛОСЬ</p>
-      <div className={cls.wrap}>
-        <div className={cls.weddingDayContainer}>
-          <p className={cls.weddingDayData}>
-            {days}
-          </p>
-          <p className={cls.daysCount}>{getEnding(days, endingsMap.days)}</p>
-        </div>
-        <div className={cls.weddingDayContainer}>
-          <p className={cls.weddingDayData}>
-            {hours}
-          </p>
-          <p className={cls.daysCount}>{getEnding(hours, endingsMap.hours)}</p>
-        </div>
-        <div className={cls.weddingDayContainer}>
-          <p className={cls.weddingDayData}>
-            {minutes}
-          </p>
-          <p className={cls.daysCount}>{getEnding(minutes, endingsMap.minutes)}</p>
-        </div>
-        <div className={cls.weddingDayContainer}>
-          <p className={cls.weddingDayData}>
-            {seconds}
-          </p>
-          <p className={cls.daysCount}>{getEnding(seconds, endingsMap.seconds)}</p>
-        </div>
-      </div>
+      {isWeddingDay ?
+        <p>ДЕНЬ СВАДЬБЫ НАСТУПИЛ! <br /> ЖДЕМ ВАС!</p> :
+        <>
+          <p>DATE</p>
+          <p className={cls.weddingDate}>{weddingDate}</p>
+          <p>ДО СВАДЬБЫ ОСТАЛОСЬ</p>
+          <div className={cls.wrap}>
+            <div className={cls.weddingDayContainer}>
+              <p className={cls.weddingDayData}>
+                {days}
+              </p>
+              <p className={cls.daysCount}>{getEnding(days, endingsMap.days)}</p>
+            </div>
+            <div className={cls.weddingDayContainer}>
+              <p className={cls.weddingDayData}>
+                {hours}
+              </p>
+              <p className={cls.daysCount}>{getEnding(hours, endingsMap.hours)}</p>
+            </div>
+            <div className={cls.weddingDayContainer}>
+              <p className={cls.weddingDayData}>
+                {minutes}
+              </p>
+              <p className={cls.daysCount}>{getEnding(minutes, endingsMap.minutes)}</p>
+            </div>
+            <div className={cls.weddingDayContainer}>
+              <p className={cls.weddingDayData}>
+                {seconds}
+              </p>
+              <p className={cls.daysCount}>{getEnding(seconds, endingsMap.seconds)}</p>
+            </div>
+          </div>
+        </>
+      }
     </div>
   );
 };

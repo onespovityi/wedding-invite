@@ -1,7 +1,7 @@
 import cls from './WeddingDetails.module.scss'
 import weddingCouple from '../../assets/img/wedding-couple.jpg';
 
-export const WeddingDetails = () => {
+export const WeddingDetails = ({ isWeddingDay }: { isWeddingDay: boolean }) => {
   return <>
     <p className={cls.title}>WEDDING DAY</p>
     <div className={cls.namesContainer}>
@@ -10,6 +10,6 @@ export const WeddingDetails = () => {
       <p className={cls.namesRight}>{"Maria"}</p>
     </div>
     <img className={cls.img} width={309} src={weddingCouple} alt='weddingCouple' />
-    <p className={cls.inviteText}>Приглашаем Вас отпраздновать <br /> самое важное событие в нашей <br /> жизни - день нашей свадьбы!</p>
+    {!isWeddingDay && <p className={cls.inviteText}>Приглашаем Вас отпраздновать <br /> самое важное событие в нашей <br /> жизни - день нашей свадьбы!</p>}
   </>
 }
